@@ -28,3 +28,6 @@ If mentee's project has something to do with REST web-services, the tasks that a
 4. Tests must be implemented so that they could be launched in parallel.
 5. Naming and Code Conventions should be followed.
 6. As for tests of the bonus task, they should be created to test CRUD operations of the given resource.
+
+## Dependencies
+See [DEPENDENCIES.md](DEPENDENCIES.md) for detailed dependency information.
