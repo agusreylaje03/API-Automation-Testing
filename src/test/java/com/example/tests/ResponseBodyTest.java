@@ -9,12 +9,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
+/**
+ * Response Body Validation Test Suite
+ * Tests for validating response body structure and content
+ */
 @DisplayName("Response Body Validation Tests")
 public class ResponseBodyTest extends TestBase {
 
     @Test
     @DisplayName("Verify response body contains array of 10 users")
     public void verifyResponseBodyContains10Users() {
+        // Verify the response contains the expected number of users
         RestAssured
                 .given()
                 .spec(requestSpec)
@@ -27,6 +32,7 @@ public class ResponseBodyTest extends TestBase {
     @Test
     @DisplayName("Verify response body can be deserialized to User array")
     public void verifyResponseBodyDeserializesToUserArray() {
+        // Extract response as User array
         User[] users = RestAssured
                 .given()
                 .spec(requestSpec)
@@ -36,6 +42,7 @@ public class ResponseBodyTest extends TestBase {
                 .extract()
                 .as(User[].class);
 
+        // Verify deserialization was successful
         assert users.length == Constants.EXPECTED_USERS_COUNT;
     }
 }

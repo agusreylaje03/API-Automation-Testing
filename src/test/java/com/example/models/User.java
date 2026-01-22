@@ -2,6 +2,10 @@ package com.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * User model representing a user from JSONPlaceholder API.
+ * Includes nested classes for Address, Geo coordinates and Company info.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     private Integer id;
@@ -13,6 +17,7 @@ public class User {
     private String website;
     private Company company;
 
+    // Getters and Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
@@ -37,6 +42,9 @@ public class User {
     public Company getCompany() { return company; }
     public void setCompany(Company company) { this.company = company; }
 
+    /**
+     * Address information with street, city, zipcode and geographic coordinates
+     */
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Address {
         private String street;
@@ -61,6 +69,9 @@ public class User {
         public void setGeo(Geo geo) { this.geo = geo; }
     }
 
+    /**
+     * Geographic coordinates (latitude and longitude)
+     */
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Geo {
         private String lat;
@@ -73,6 +84,9 @@ public class User {
         public void setLng(String lng) { this.lng = lng; }
     }
 
+    /**
+     * Company details including name, catch phrase and business focus
+     */
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Company {
         private String name;

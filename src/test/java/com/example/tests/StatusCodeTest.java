@@ -8,12 +8,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
+/**
+ * Status Code Validation Test Suite
+ * Tests for validating HTTP response status codes
+ */
 @DisplayName("Status Code Validation Tests")
 public class StatusCodeTest extends TestBase {
 
     @Test
     @DisplayName("Verify GET /users returns 200 OK status code")
     public void verifyStatusCodeIs200() {
+        // Verify the endpoint returns successful status code
         RestAssured
                 .given()
                 .spec(requestSpec)

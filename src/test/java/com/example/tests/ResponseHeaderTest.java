@@ -9,12 +9,17 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+/**
+ * Response Header Validation Test Suite
+ * Tests for validating HTTP response headers
+ */
 @DisplayName("Response Header Validation Tests")
 public class ResponseHeaderTest extends TestBase {
 
     @Test
     @DisplayName("Verify Content-Type header exists and has correct value")
     public void verifyContentTypeHeader() {
+        // Verify Content-Type header is present and matches expected value
         RestAssured
                 .given()
                 .spec(requestSpec)
